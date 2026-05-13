@@ -25,71 +25,91 @@
     return;
   }
 
-  const fragment = document.createDocumentFragment();
+  const groupOrder = ["ios", "android", "other"];
+  const groupMeta = {
+    ios: { title: "iOS", className: "platform-ios" },
+    android: { title: "Android", className: "platform-android" },
+    other: { title: "其他", className: "platform-other" }
+  };
+  const groups = { ios: [], android: [], other: [] };
 
   links.forEach((link) => {
     if (!link || !link.url || !link.label) {
       return;
     }
+    const key = (link.platform || "").toLowerCase() === "android"
+      ? "android"
+      : (link.platform || "").toLowerCase() === "ios"
+        ? "ios"
+        : "other";
+    groups[key].push(link);
+  });
 
-    const anchor = document.createElement("a");
-    anchor.className = link.image ? "link-card has-image" : "link-card";
-    anchor.href = link.url;
-    anchor.target = "_blank";
-    anchor.rel = "noopener noreferrer";
-    anchor.setAttribute("aria-label", `開啟 ${link.label}`);
+  const fragment = document.createDocumentFragment();
 
-    if (link.color) {
-      anchor.style.setProperty("--link-color", link.color);
-    }
+  groupOrder.forEach((key) => {
+    const items = groups[key];
+    if (!items.length) return;
 
-    if (link.image) {
-      const image = document.createElement("img");
-      image.src = link.image;
-      image.alt = link.imageAlt || link.label;
-      image.loading = "lazy";
-      anchor.appendChild(image);
-    }
+    const groupEl = document.createElement("section");
+    groupEl.className = `link-group link-group-${key}`;
 
-    const content = document.createElement("span");
-    content.className = "link-content";
+    const heading = document.createElement("h2");
+    heading.className = `group-title ${groupMeta[key].className}`;
+    heading.textContent = groupMeta[key].title;
+    groupEl.appendChild(heading);
 
-    if (link.platform || link.tag) {
-      const badges = document.createElement("span");
-      badges.className = "link-badges";
+    const list = document.createElement("div");
+    list.className = "group-cards";
 
-      if (link.platform) {
-        const platform = document.createElement("span");
-        const platformKey = link.platform.toLowerCase() === "android" ? "android" : "ios";
-        platform.className = `platform-tag platform-${platformKey}`;
-        platform.textContent = link.platform;
-        badges.appendChild(platform);
+    items.forEach((link) => {
+      const anchor = document.createElement("a");
+      anchor.className = link.image ? "link-card has-image" : "link-card";
+      anchor.href = link.url;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.setAttribute("aria-label", `開啟 ${link.label}`);
+
+      if (link.color) {
+        anchor.style.setProperty("--link-color", link.color);
       }
+
+      if (link.image) {
+        const image = document.createElement("img");
+        image.src = link.image;
+        image.alt = link.imageAlt || link.label;
+        image.loading = "lazy";
+        anchor.appendChild(image);
+      }
+
+      const content = document.createElement("span");
+      content.className = "link-content";
 
       if (link.tag) {
         const tag = document.createElement("span");
         tag.className = "link-tag";
         tag.textContent = link.tag;
-        badges.appendChild(tag);
+        content.appendChild(tag);
       }
 
-      content.appendChild(badges);
-    }
+      const label = document.createElement("span");
+      label.className = "link-label";
+      label.textContent = link.label;
+      content.appendChild(label);
 
-    const label = document.createElement("span");
-    label.className = "link-label";
-    label.textContent = link.label;
-    content.appendChild(label);
+      if (link.description) {
+        const description = document.createElement("span");
+        description.className = "link-description";
+        description.textContent = link.description;
+        content.appendChild(description);
+      }
 
-    if (link.description) {
-      const description = document.createElement("span");
-      description.className = "link-description";
-      description.textContent = link.description;
-      content.appendChild(description);
-    }
+      anchor.appendChild(content);
+      list.appendChild(anchor);
+    });
 
-    anchor.appendChild(content);
-    fragment.appendChild(anchor);
+    groupEl.appendChild(list);
+    fragment.appendChild(groupEl);
   });
 
   linksListElement.appendChild(fragment);

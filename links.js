@@ -4,7 +4,7 @@ window.LINK_PAGE_CONFIG = {
   eyebrow: "安心御老",
   links: [
     {
-      label: "iOS｜安心御老專業",
+      label: "安心御老專業",
       platform: "iOS",
       tag: "專業",
       color: "#3aa7e0",
@@ -13,7 +13,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "iOS｜安心御老家屬",
+      label: "安心御老家屬",
       platform: "iOS",
       tag: "家屬",
       color: "#f2d74e",
@@ -22,7 +22,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "iOS｜安心御老個案",
+      label: "安心御老個案",
       platform: "iOS",
       tag: "個案",
       color: "#f59a38",
@@ -31,7 +31,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "iOS｜安心御老照顧",
+      label: "安心御老照顧",
       platform: "iOS",
       tag: "照顧",
       color: "#45bd72",
@@ -40,7 +40,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "Android｜安心御老專業",
+      label: "安心御老專業",
       platform: "Android",
       tag: "專業",
       color: "#3aa7e0",
@@ -49,7 +49,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "Android｜安心御老家屬",
+      label: "安心御老家屬",
       platform: "Android",
       tag: "家屬",
       color: "#f2d74e",
@@ -58,7 +58,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "Android｜安心御老個案",
+      label: "安心御老個案",
       platform: "Android",
       tag: "個案",
       color: "#f59a38",
@@ -67,7 +67,7 @@ window.LINK_PAGE_CONFIG = {
       image: ""
     },
     {
-      label: "Android｜安心御老照顧",
+      label: "安心御老照顧",
       platform: "Android",
       tag: "照顧",
       color: "#45bd72",
