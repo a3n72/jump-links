@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="教學手冊">
+    <title>教學手冊</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <nav class="site-nav" aria-label="主選單">
+        <a href="index.html" class="site-nav-link">下載連結</a>
+        <a href="manuals.html" class="site-nav-link is-active" aria-current="page">教學手冊</a>
+      </nav>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">安心御老</p>
+        <h1 id="page-title">教學手冊</h1>
+        <p id="page-description" class="description">請依身份選擇對應的操作手冊</p>
+      </section>
+
+      <section class="manuals-section" aria-label="教學手冊列表">
+        <div id="manuals-list" class="manuals-list"></div>
+      </section>
+    </main>
+
+    <div id="pdf-viewer" class="pdf-viewer" hidden role="dialog" aria-modal="true" aria-labelledby="pdf-viewer-title">
+      <div class="pdf-viewer-backdrop" data-action="close"></div>
+      <div class="pdf-viewer-panel">
+        <header class="pdf-viewer-header">
+          <h2 id="pdf-viewer-title" class="pdf-viewer-title">教學手冊</h2>
+          <button type="button" class="pdf-viewer-close" data-action="close" aria-label="關閉">&times;</button>
+        </header>
+        <div class="pdf-viewer-body">
+          <iframe id="pdf-viewer-frame" title="教學手冊內容" referrerpolicy="no-referrer"></iframe>
+          <p id="pdf-viewer-fallback" class="pdf-viewer-fallback" hidden>若手冊尚未上傳，請稍後再試。</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="manuals.js"></script>
+    <script src="manuals-script.js"></script>
+  </body>
+</html>
