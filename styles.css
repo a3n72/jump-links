@@ -149,16 +149,41 @@ h1 {
   gap: 6px;
 }
 
+.link-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.platform-tag,
 .link-tag {
   width: fit-content;
   padding: 4px 10px;
-  color: #1f2933;
   font-size: 0.78rem;
   font-weight: 900;
   line-height: 1;
+  border-radius: 999px;
+}
+
+.platform-tag {
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.platform-ios {
+  background: #1f2933;
+  border: 1px solid #1f2933;
+}
+
+.platform-android {
+  background: #34a853;
+  border: 1px solid #34a853;
+}
+
+.link-tag {
+  color: #1f2933;
   background: color-mix(in srgb, var(--link-color, var(--accent)) 38%, white);
   border: 1px solid color-mix(in srgb, var(--link-color, var(--accent)) 58%, white);
-  border-radius: 999px;
 }
 
 .link-label {

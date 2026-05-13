@@ -5,6 +5,7 @@ window.LINK_PAGE_CONFIG = {
   links: [
     {
       label: "iOS｜安心御老專業",
+      platform: "iOS",
       tag: "專業",
       color: "#3aa7e0",
       description: "App Store 下載連結",
@@ -13,6 +14,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "iOS｜安心御老家屬",
+      platform: "iOS",
       tag: "家屬",
       color: "#f2d74e",
       description: "App Store 下載連結",
@@ -21,6 +23,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "iOS｜安心御老個案",
+      platform: "iOS",
       tag: "個案",
       color: "#f59a38",
       description: "App Store 下載連結",
@@ -29,6 +32,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "iOS｜安心御老照顧",
+      platform: "iOS",
       tag: "照顧",
       color: "#45bd72",
       description: "App Store 下載連結",
@@ -37,6 +41,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "Android｜安心御老專業",
+      platform: "Android",
       tag: "專業",
       color: "#3aa7e0",
       description: "Google Play 下載連結",
@@ -45,6 +50,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "Android｜安心御老家屬",
+      platform: "Android",
       tag: "家屬",
       color: "#f2d74e",
       description: "Google Play 下載連結",
@@ -53,6 +59,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "Android｜安心御老個案",
+      platform: "Android",
       tag: "個案",
       color: "#f59a38",
       description: "Google Play 下載連結",
@@ -61,6 +68,7 @@ window.LINK_PAGE_CONFIG = {
     },
     {
       label: "Android｜安心御老照顧",
+      platform: "Android",
       tag: "照顧",
       color: "#45bd72",
       description: "Google Play 下載連結",

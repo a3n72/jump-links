@@ -54,11 +54,26 @@
     const content = document.createElement("span");
     content.className = "link-content";
 
-    if (link.tag) {
-      const tag = document.createElement("span");
-      tag.className = "link-tag";
-      tag.textContent = link.tag;
-      content.appendChild(tag);
+    if (link.platform || link.tag) {
+      const badges = document.createElement("span");
+      badges.className = "link-badges";
+
+      if (link.platform) {
+        const platform = document.createElement("span");
+        const platformKey = link.platform.toLowerCase() === "android" ? "android" : "ios";
+        platform.className = `platform-tag platform-${platformKey}`;
+        platform.textContent = link.platform;
+        badges.appendChild(platform);
+      }
+
+      if (link.tag) {
+        const tag = document.createElement("span");
+        tag.className = "link-tag";
+        tag.textContent = link.tag;
+        badges.appendChild(tag);
+      }
+
+      content.appendChild(badges);
     }
 
     const label = document.createElement("span");
