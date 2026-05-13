@@ -39,6 +39,10 @@
     anchor.rel = "noopener noreferrer";
     anchor.setAttribute("aria-label", `開啟 ${link.label}`);
 
+    if (link.color) {
+      anchor.style.setProperty("--link-color", link.color);
+    }
+
     if (link.image) {
       const image = document.createElement("img");
       image.src = link.image;
@@ -49,6 +53,13 @@
 
     const content = document.createElement("span");
     content.className = "link-content";
+
+    if (link.tag) {
+      const tag = document.createElement("span");
+      tag.className = "link-tag";
+      tag.textContent = link.tag;
+      content.appendChild(tag);
+    }
 
     const label = document.createElement("span");
     label.className = "link-label";
